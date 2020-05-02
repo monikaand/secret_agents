@@ -1,0 +1,13 @@
+{
+  "name": "secret_agents",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@bitbucket.org:m_graziowski/secret_agents.git",
+  "author": "m_graziowski <30260979+grazik@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  }
+}
