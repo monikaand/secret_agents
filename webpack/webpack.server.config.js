@@ -5,8 +5,9 @@ const nodeExternals = require('webpack-node-externals');
 
 const resolve = dir => path.resolve(__dirname, '..', dir);
 
-module.exports = (env, argv) => ({
+module.exports = ({ mode }) => ({
   entry: [resolve('src/server/server.js')],
+  mode: mode,
   output: {
     path: resolve('dist'),
     publicPath: '/',
@@ -31,7 +32,7 @@ module.exports = (env, argv) => ({
   },
   plugins: [
     new webpack.DefinePlugin({
-      PRODUCTION: argv.mode === 'production',
+      PRODUCTION: mode === 'production',
     }),
   ],
 });

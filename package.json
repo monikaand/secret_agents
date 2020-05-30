@@ -6,15 +6,16 @@
   "author": "m_graziowski <30260979+grazik@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf dist && webpack --config webpack/webpack.config.js",
-    "buildDev": "rm -rf dist && webpack --mode development --config webpack/webpack.server.config.js && webpack --mode development --config webpack/webpack.dev.config.js",
-    "buildProd": "rm -rf dist && webpack --mode production --config webpack/webpack.server.config.js && webpack --mode production --config webpack/webpack.prod.config.js",
-    "start": "node ./dist/server/main.js"
+    "prod": "concurrently \"yarn prod:front\" \"yarn prod:back\"",
+    "prod:front": "yarn webpack --config ./webpack/webpack.prod.config.js",
+    "prod:back": "yarn webpack --config ./webpack/webpack.server.config.js --env.mode production",
+    "dev": "yarn webpack --config ./webpack/webpack.server.config.js --env.mode development"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "babel-loader": "^8.1.0",
+    "concurrently": "^5.2.0",
     "css-loader": "^3.5.3",
     "ejs-compiled-loader": "^3.0.0",
     "eslint": "^6.8.0",
