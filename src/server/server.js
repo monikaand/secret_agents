@@ -3,8 +3,6 @@ import express from 'express';
 
 import { attachDevTools } from '../../buildUtils/attachDevTools';
 
-const PORT = process.env.PORT || 8080;
-
 const server = express();
 
 server.set('view engine', 'ejs');
@@ -21,6 +19,4 @@ server.get('/api/:name', (req, res) => {
   res.render('helloWorld', { name: req.params.name });
 });
 
-server.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+export { server };
