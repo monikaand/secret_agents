@@ -5,9 +5,42 @@
   "repository": "git@bitbucket.org:m_graziowski/secret_agents.git",
   "author": "m_graziowski <30260979+grazik@users.noreply.github.com>",
   "license": "MIT",
+  "scripts": {
+    "prod": "concurrently \"yarn prod:front\" \"yarn prod:back\"",
+    "prod:front": "yarn webpack --config ./webpack/webpack.prod.config.js",
+    "prod:back": "yarn webpack --config ./webpack/webpack.server.config.js --env.mode production",
+    "dev": "yarn webpack --config ./webpack/webpack.server.config.js --env.mode development"
+  },
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-loader": "^8.1.0",
+    "concurrently": "^5.2.0",
+    "css-loader": "^3.5.3",
+    "ejs-compiled-loader": "^3.0.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2"
-  }
+    "eslint-plugin-import": "^2.20.2",
+    "file-loader": "^6.0.0",
+    "html-webpack-harddisk-plugin": "^1.0.1",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sass-loader": "^8.0.2",
+    "start-server-webpack-plugin": "^2.2.5",
+    "style-loader": "^1.2.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "ejs": "^3.1.2",
+    "express": "^4.17.1"
+  },
+  "sideEffects": false
 }

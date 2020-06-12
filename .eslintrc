@@ -1,55 +1,58 @@
 {
-    "extends": "airbnb-base",
-    "rules": {
-        "func-names": [
-            "error",
-            "never"
-        ],
-        "eol-last": [
-            "error",
-            "never"
-        ],
-        "indent": [
-            "error",
-            4,
-            {
-                "SwitchCase": 1
-            }
-        ],
-        "linebreak-style": [
-            "error",
-            "windows"
-        ],
-        "one-var": [
-            "error",
-            "always"
-        ],
-        "import/no-unresolved": [
-            "off"
-        ],
-        "import/extensions": [
-            ".js"
-        ],
-        "max-len": [
-            "off"
-        ],
-        "no-param-reassign": [
-            "error",
-            {
-                "props": false
-            }
-        ],
-        "prefer-destructuring": [
-            "error",
-            {
-                "object": true,
-                "array": false
-            }
-        ]
-    },
-    "globals": {
-        "PRODUCTION": false,
-        "document": false,
-        "window": false
-    }
+  "extends": [
+    "airbnb-base",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "rules": {
+    "func-names": [
+      "error",
+      "never"
+    ],
+    "eol-last": [
+      "error",
+      "never"
+    ],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "windows"
+    ],
+    "import/no-unresolved": [
+      "off"
+    ],
+    "max-len": [
+      "off"
+    ],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    "prefer-destructuring": [
+      "error",
+      {
+        "object": true,
+        "array": false
+      }
+    ],
+    "import/prefer-default-export": "off"
+  },
+  "settings": {
+    "import/extensions": [
+      ".js"
+    ]
+  },
+  "globals": {
+    "PRODUCTION": false,
+    "document": false,
+    "window": false
+  }
 }

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Express and Webpack App</title>
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+<h1>Nie wiem o czym mowisz</h1>
+<img src="<%- require('../assets/images/logo.png').default %>"/>
+<p>Co tam? Co mi powiesz?</p>
+<p>Nie wiem :(</p>
+<%- require('./partials/name.ejs')({ name }) %>
+<%- require('./partials/abb.ejs')({ age: 15 }) %>
+<p>czy to zadziala?</p>
+<p>Tak! To działa?</p>
+</body>
+</html>
