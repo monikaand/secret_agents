@@ -54,5 +54,8 @@
     "PRODUCTION": false,
     "document": false,
     "window": false
+  },
+  "env": {
+    "jest": true
   }
 }
