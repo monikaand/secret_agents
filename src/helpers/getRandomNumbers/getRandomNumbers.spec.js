@@ -15,7 +15,7 @@ describe('Get Random numbers helpers', () => {
       getRandomNumbers({
         min: 0,
         max: 5,
-        amount: 7,
+        amount: 6,
       });
     }).toThrow();
   });
@@ -26,7 +26,7 @@ describe('Get Random numbers helpers', () => {
         min: 0,
         max: 5,
         amount: 2,
-        excluded: [1, 2, 3, 4, 5],
+        excluded: [1, 2, 3, 4],
       });
     }).toThrow();
   });
@@ -45,19 +45,26 @@ describe('Get Random numbers helpers', () => {
     });
   });
 
-  test('should return all possible numbers', () => {
+  test('should return all rest possible numbers', () => {
     const config = {
       min: 0,
       max: 10,
-      excluded: [1, 2, 3, 4, 5, 9, 10],
+      excluded: [1, 2, 3, 4, 5, 9],
       amount: 4,
     };
-    const results = getRandomNumbers(config);
 
-    expect(results.length).toBe(config.amount);
-    results.forEach((number, index) => {
-      expect(config.excluded).not.toContain(number);
-      expect(results.slice(index + 1)).not.toContain(number);
-    });
+    const results = getRandomNumbers(config).sort((a, b) => a - b);
+    expect(results).toStrictEqual([0, 6, 7, 8]);
+  });
+
+  test('should return all numbers except the max', () => {
+    const config = {
+      min: 0,
+      max: 4,
+      amount: 4,
+    };
+
+    const results = getRandomNumbers(config).sort((a, b) => a - b);
+    expect(results).toStrictEqual([0, 1, 2, 3]);
   });
 });

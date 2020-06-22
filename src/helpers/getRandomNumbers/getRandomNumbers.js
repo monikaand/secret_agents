@@ -12,7 +12,7 @@ export function getRandomNumbers({
     throw Error('max has to be greater than min');
   }
 
-  if (max - min - excluded.length + 1 < amount) {
+  if (max - min - excluded.length < amount) {
     throw Error('can\'t suffice amount condition');
   }
 
