@@ -19,4 +19,8 @@ server.get('/api/:name', (req, res) => {
   res.render('helloWorld', { name: req.params.name });
 });
 
+server.get('/login', (req, res) => {
+  res.render('./loginPage');
+});
+
 export { server };

@@ -11,6 +11,10 @@ module.exports = {
     main: [
       './index.js',
     ],
+    loginPage:
+    [
+      './js/loginPage.js'
+    ]
   },
   output: {
     path: resolve('dist'),
@@ -66,6 +70,13 @@ module.exports = {
       templateParameters: {
         name: '<%= name %>',
       },
+      chunks: ['main'],
+    }),
+    new HtmlWebPackPlugin({
+      template: 'views/loginPage.ejs',
+      filename: 'views/loginPage.ejs',
+      alwaysWriteToDisk: true,
+      chunks: ['loginPage'],
     }),
     new HtmlWebpackHarddiskPlugin(),
     new MiniCssExtractPlugin({

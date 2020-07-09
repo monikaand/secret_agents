@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Nova+Mono&family=Space+Mono&display=swap" rel="stylesheet">
+    <title>Sign in</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="login-wrapper">
+        <div class="login-box">
+          <h2 class="login-subheader">Welcome to</h2>
+          <h1 class="login-header"> Secret Agents</h1>
+
+          <div class="login-form">
+            <label for="username" class="login-label"><b>Username</b></label>
+            <input
+              type="text"
+              placeholder="Enter Username"
+              name="username"
+              class="login-input"
+              required
+            />
+            <label for="password" class="login-label"><b>Password</b></label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="password"
+              class="login-input"
+              required
+            />
+            <button type="submit" class="login-btn">Sign in</button>
+          </div>
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <div class="image-bg">
+          <img
+            src="<%- require('../assets/images/login-img.jpg').default %>"
+            alt="loginDetectives"
+            class="image-detective"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

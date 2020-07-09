@@ -12,6 +12,11 @@ module.exports = {
       '../buildUtils/client',
       './index.js',
     ],
+    loginPage:
+    [
+      '../buildUtils/client',
+      './js/loginPage.js'
+    ]
   },
   output: {
     path: resolve('dist'),
@@ -63,6 +68,13 @@ module.exports = {
       templateParameters: {
         name: '<%= name %>',
       },
+      chunks: ['main'],
+    }),
+    new HtmlWebPackPlugin({
+      template: 'views/loginPage.ejs',
+      filename: 'views/loginPage.ejs',
+      alwaysWriteToDisk: true,
+      chunks: ['loginPage']
     }),
     new HtmlWebpackHarddiskPlugin(),
     new webpack.HotModuleReplacementPlugin(),
